@@ -46,4 +46,37 @@ app.all('/backend', async(req, res) => {
         res.status(500).send('Internal Server Error');
     }
 })
+app.all('/school-frontend', async(req, res) => {
+    try {
+        console.log("Just got a request!");
+        console.log(req.body);
+
+        // Resend the request body to another endpoint using axios
+        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-school-frontend', req.body);
+        // const response = await axios.post('http://127.0.0.1:3000/api/v1/slips/response-school-frontend', req.body);
+
+        console.log("Response from other endpoint:", response.data);
+        res.redirect(response.headers.location);
+    } catch (error) {
+        console.error("Error:", error.message);
+        res.status(500).send('Internal Server Error');
+    }
+})
+app.all('/school-backend', async(req, res) => {
+    try {
+        console.log("Just got a request!");
+        console.log(req.body);
+
+        // Resend the request body to another endpoint using axios
+        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-school-backend', req.body);
+        // const response = await axios.post('http://127.0.0.1:3000/api/v1/slips/response-school-backend', req.body);
+
+        console.log("Response from other endpoint:", response.data);
+        
+        res.send('RECEIVEOK');
+    } catch (error) {
+        console.error("Error:", error.message);
+        res.status(500).send('Internal Server Error');
+    }
+})
 app.listen(process.env.PORT || 3000)
