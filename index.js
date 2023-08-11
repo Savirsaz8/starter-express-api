@@ -17,7 +17,7 @@ app.all('/frontend', async(req, res) => {
         console.log(req.body);
 
         // Resend the request body to another endpoint using axios
-        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-frontend', req.body);
+        const response = await axios.post('http://13.214.199.249:3000/api/v1/slips/response-frontend', req.body);
         // const response = await axios.post('http://127.0.0.1:3000/api/v1/slips/response-frontend', req.body);
 
         console.log("Response from other endpoint:", response.data);
@@ -36,7 +36,7 @@ app.all('/backend', async(req, res) => {
         console.log(req.body);
 
         // Resend the request body to another endpoint using axios
-        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-backend', req.body);
+        const response = await axios.post('http://13.214.199.249:3000/api/v1/slips/response-backend', req.body);
 
         console.log("Response from other endpoint:", response.data);
         
@@ -52,7 +52,7 @@ app.all('/school-frontend', async(req, res) => {
         console.log(req.body);
 
         // Resend the request body to another endpoint using axios
-        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-school-frontend', req.body);
+        const response = await axios.post('http://13.214.199.249:3000/api/v1/slips/response-school-frontend', req.body);
         // const response = await axios.post('http://127.0.0.1:3000/api/v1/slips/response-school-frontend', req.body);
 
         console.log("Response from other endpoint:", response.data);
@@ -68,7 +68,7 @@ app.all('/school-backend', async(req, res) => {
         console.log(req.body);
 
         // Resend the request body to another endpoint using axios
-        const response = await axios.post('http://68.183.180.30:3000/api/v1/slips/response-school-backend', req.body);
+        const response = await axios.post('http://13.214.199.249:3000/api/v1/slips/response-school-backend', req.body);
         // const response = await axios.post('http://127.0.0.1:3000/api/v1/slips/response-school-backend', req.body);
 
         console.log("Response from other endpoint:", response.data);
